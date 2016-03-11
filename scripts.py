@@ -48,9 +48,14 @@ def convert_block(snap_block):
     # iterate over all possible blocks
     for key in blocks.blocks:
         if key == s:
-            args = get_args(snap_block)
-            check_args(s, blocks.blocks[key][1], len(args))
-            scratch_block = kurt.Block(blocks.blocks[key][0], *args)
+            if blocks.blocks[key][0] != None:
+                args = get_args(snap_block)
+                check_args(s, blocks.blocks[key][1], len(args))
+                scratch_block = kurt.Block(blocks.blocks[key][0], *args)
+            else:
+                if blocks.blocks[key][2] == None:
+                    raise Exception("Both block[0] and block[2] are none!")
+                scratch_block = blocks.blocks[key][2]()
 
     # unknown block
     if scratch_block == None:

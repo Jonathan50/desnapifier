@@ -15,11 +15,14 @@ This will convert the Snap*!* project `test.xml` and output it to `test.sb2`
 To add a block, simply add a new entry in `blocks.py`.  
 An entry looks like the following:
 ```py
-    "snapIdentifier": [ "scratchOpcode", argCount ],
+    "snapIdentifier": [ "scratchOpcode", argCount, makeBlockFn ],
 ```
+`snapIdentifier` is the identifier Snap*!* uses to identify the block.  
+`scratchOpcode` is the opcode of the Scratch block, or None if there is no Scratch equivilant.  
+`makeBlockFn` is a function that should return a `kurt.Block`. Use this only if there is no direct Scratch equivilant to the block.
 For example:
 ```py
-    "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
+    "doSayFor":   [ "say:duration:elapsed:from:", 2, None ],
 ```
 Find a full list of Scratch block opcodes at https://github.com/LLK/scratch-flash/blob/master/src/Specs.as.
 ## Status

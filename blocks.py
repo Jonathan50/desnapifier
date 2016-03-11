@@ -17,19 +17,19 @@
 
 blocks = {
     # motion
-    "forward":    [ "forward:", 1 ],
-    "turn":       [ "turnRight:", 1],
-    "turnLeft":   [ "turnLeft:",  1],
+    "forward":    [ "forward:", 1, None ],
+    "turn":       [ "turnRight:", 1, None ],
+    "turnLeft":   [ "turnLeft:",  1, None ],
 
     # looks
-    "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
-    "bubble":     [ "say:", 1 ],
-    "doThinkFor": [ "think:duration:elapsed:from:", 2 ],
-    "doThink":    [ "think:", 1 ],
-    "show":       [ "show", 0 ],
-    "hide":       [ "hide", 0 ],
+    "doSayFor":   [ "say:duration:elapsed:from:", 2, None ],
+    "bubble":     [ "say:", 1, None ],
+    "doThinkFor": [ "think:duration:elapsed:from:", 2, None ],
+    "doThink":    [ "think:", 1, None ],
+    "show":       [ "show", 0, None ],
+    "hide":       [ "hide", 0, None ],
 
     # control/events
-    "receiveGo":  [ "whenGreenFlag", 0 ],
-    "doWait":     [ "wait:elapsed:from:", 1 ]
+    "receiveGo":  [ "whenGreenFlag", 0, None ],
+    "doWait":     [ "wait:elapsed:from:", 1, None ]
 }
