@@ -22,6 +22,9 @@ For example:
     "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
 ```
 Find a full list of Scratch block opcodes at https://github.com/LLK/scratch-flash/blob/master/src/Specs.as.
+## Status
+desnapifier is currently only able to convert very simple Snap*!* projects.  
+See `test.xml` for an example.
 ## Copyright
 desnapifier is Copyright &copy; 2016 Jeandre Kruger.  
 desnapifier is [Free Software](http://gnu.org/philosophy/free-sw.html) licensed under the GNU General Public License version, either version 3 of the license, or \(at your option\) any later version.
