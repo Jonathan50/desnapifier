@@ -16,12 +16,55 @@
 # along with screchifier.  If not, see <http://www.gnu.org/licenses/>.
 
 import kurt
+import notsupported
+
+class NotEnoughArgumentsError(Exception):
+    pass
+
+class TooManyArgumentsError(Exception):
+    pass
+
+def check_args(s, c):
+    if i < c:
+        raise NotEnoughArgumentsError("not enough arguments for %s block" % s)
+    if i > c:
+        raise TooManyArgumentsError("too many arguments for %s block" % s)
+
+def get_args(snap_block):
+    args_list = []
+    for child in snap_block:
+        if child.tag == "l":
+            args_list.append(child.text)
+    return args_list
+
+def convert_block(snap_block):
+    scratch_block = None
+
+    if not "s" in snap_block.attrib:
+        raise Exception("block has no s attribute!")
+
+    s = snap_block.attrib["s"]
+
+    if s == "receiveGo":
+        scratch_block = kurt.Block("whenGreenFlag")
+    if s == "doSayFor":
+        (say, secs) = tuple(get_args(snap_block))
+        scratch_block = kurt.Block("say:duration:elapsed:from:", say, secs)
+
+    # unknown block
+    if scratch_block == None:
+        raise notsupported.UnsupportedBlockError(s)
+
+    return scratch_block
 
 def convert_scripts(snap_scripts):
     scratch_scripts = []
+
     for script in snap_scripts.iter("script"):
         scratch_script = kurt.Script()
-        for block in script.iter("block"):
-            # insert complex logic here...
-            pass
+        for block in script:
+            if block.tag == "block":
+                scratch_script.append(convert_block(block))
+        scratch_scripts.append(scratch_script)
+
     return scratch_scripts

@@ -17,3 +17,6 @@
 
 class InheritanceNotSupportedError(Exception):
     pass
+
+class UnsupportedBlockError(Exception):
+    pass
