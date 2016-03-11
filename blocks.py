@@ -23,7 +23,11 @@ blocks = {
 
     # looks
     "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
+    "bubble":     [ "say:", 1 ],
     "doThinkFor": [ "think:duration:elapsed:from:", 2 ],
+    "doThink":    [ "think:" ],
+    "show":       [ "show", 0 ],
+    "hide":       [ "hide", 0 ],
 
     # control/events
     "receiveGo":  [ "whenGreenFlag", 0 ],
