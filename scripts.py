@@ -16,7 +16,7 @@
 # along with screchifier.  If not, see <http://www.gnu.org/licenses/>.
 
 import kurt
-import notsupported
+import notsupported, blocks
 
 class NotEnoughArgumentsError(Exception):
     pass
@@ -24,10 +24,10 @@ class NotEnoughArgumentsError(Exception):
 class TooManyArgumentsError(Exception):
     pass
 
-def check_args(s, c):
-    if i < c:
+def check_args(s, c, n):
+    if n < c:
         raise NotEnoughArgumentsError("not enough arguments for %s block" % s)
-    if i > c:
+    if n > c:
         raise TooManyArgumentsError("too many arguments for %s block" % s)
 
 def get_args(snap_block):
@@ -45,11 +45,11 @@ def convert_block(snap_block):
 
     s = snap_block.attrib["s"]
 
-    if s == "receiveGo":
-        scratch_block = kurt.Block("whenGreenFlag")
-    if s == "doSayFor":
-        (say, secs) = get_args(snap_block)
-        scratch_block = kurt.Block("say:duration:elapsed:from:", say, secs)
+    for key in blocks.blocks:
+        if key == s:
+            args = get_args(snap_block)
+            check_args(s, blocks.blocks[key][1], len(args))
+            scratch_block = kurt.Block(blocks.blocks[key][0], *args)
 
     # unknown block
     if scratch_block == None:
