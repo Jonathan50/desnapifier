@@ -18,6 +18,8 @@
 blocks = {
     # motion
     "forward":    [ "forward:", 1 ],
+    "turn":       [ "turnRight:", 1],
+    "turnLeft":   [ "turnLeft:",  1],
 
     # looks
     "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
