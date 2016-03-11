@@ -6,6 +6,7 @@
  - [ ] Copy costumes
  - [ ] Support temporary variables
  - [ ] Support custom blocks
+ - [x] Allow blocks with no direct Scratch equivilant
 
 ## Sprites
  - [ ] Copy draggable value
