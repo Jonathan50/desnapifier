@@ -46,7 +46,7 @@ for child in snap_project_root:
 
         stage_scripts = None
         # iterate over Stage element children
-        for stage_child in child.iter():
+        for stage_child in child:
             if stage_child.tag == "sprites":
                 snap_project_sprites = stage_child
             if stage_child.tag == "scripts":
