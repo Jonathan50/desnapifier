@@ -35,9 +35,9 @@ for child in snap_project_root:
 if snap_project_sprites == None:
     raise Exception("sprites is none!")
 
+# convert all sprites
 for sprite in snap_project_sprites.iter("sprite"):
     sprites.convert_sprite(sprite, scratch_project)
-
 
 scratch_project.save(sys.argv[2])
 
