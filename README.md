@@ -6,11 +6,20 @@ desnapifier depends on [Kurt](http://github.com/tjvr/kurt) by blob8108.
 ```
 python2 desnapifier.py infile.xml outfile.sb2
 ```
+For example:
+```
+python2 desnapifier.py test.xml test.sb2
+```
+This will convert the Snap*!* project `test.xml` and output it to `test.sb2`
 ## Adding blocks
 To add a block, simply add a new entry in `blocks.py`.  
 An entry looks like the following:
 ```py
     "snapIdentifier": [ "scratchOpcode", argCount ],
+```
+For example:
+```py
+    "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
 ```
 Find a full list of Scratch block opcodes at https://github.com/LLK/scratch-flash/blob/master/src/Specs.as.
 ## Copyright
