@@ -35,7 +35,7 @@ def get_args(snap_block):
     for child in snap_block:
         if child.tag == "l":
             args_list.append(child.text)
-    return args_list
+    return tuple(args_list)
 
 def convert_block(snap_block):
     scratch_block = None
@@ -48,7 +48,7 @@ def convert_block(snap_block):
     if s == "receiveGo":
         scratch_block = kurt.Block("whenGreenFlag")
     if s == "doSayFor":
-        (say, secs) = tuple(get_args(snap_block))
+        (say, secs) = get_args(snap_block)
         scratch_block = kurt.Block("say:duration:elapsed:from:", say, secs)
 
     # unknown block
