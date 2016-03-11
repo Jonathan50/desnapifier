@@ -25,7 +25,7 @@ blocks = {
     "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
     "bubble":     [ "say:", 1 ],
     "doThinkFor": [ "think:duration:elapsed:from:", 2 ],
-    "doThink":    [ "think:" ],
+    "doThink":    [ "think:", 1 ],
     "show":       [ "show", 0 ],
     "hide":       [ "hide", 0 ],
 
