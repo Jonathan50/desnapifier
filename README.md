@@ -19,7 +19,7 @@ An entry looks like the following:
 ```
 `snapIdentifier` is the identifier Snap*!* uses to identify the block.  
 `scratchOpcode` is the opcode of the Scratch block, or None if there is no Scratch equivilant.  
-`makeBlockFn` is a function that should return a `kurt.Block`. Use this only if there is no direct Scratch equivilant to the block.
+`makeBlockFn` is a function that should return a `kurt.Block`, or `None`. Use this only if there is no direct Scratch equivilant to the block.
 For example:
 ```py
     "doSayFor":   [ "say:duration:elapsed:from:", 2, None ],
