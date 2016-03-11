@@ -16,20 +16,12 @@
 # along with screchifier.  If not, see <http://www.gnu.org/licenses/>.
 
 import kurt
-import scripts
 
-def convert_sprite(sprite, scratch_project):
-    print "Converting sprite %s..." % sprite.attrib["name"]
-
-    scratch_sprite = kurt.Sprite(scratch_project, sprite.attrib["name"])
-
-    print "> Converting scripts..."
-    snap_scripts = None
-    for child in sprite.iter("scripts"):
-        if child.tag == "scripts":
-            snap_scripts = child
-    if snap_scripts == None:
-        raise Exception("scripts is None!")
-    scratch_sprite.scripts = scripts.convert_scripts(snap_scripts)
-
-    scratch_project.sprites.append(scratch_sprite)
+def convert_scripts(snap_scripts):
+    scratch_scripts = []
+    for script in snap_scripts.iter("script"):
+        scratch_script = kurt.Script()
+        for block in script.iter("block"):
+            # complex logic goes here...
+            pass
+    return scratch_scripts

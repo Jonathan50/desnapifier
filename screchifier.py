@@ -17,7 +17,7 @@
 
 import kurt, sys
 import xml.etree.ElementTree
-import notsupported, sprites
+import notsupported, sprites, scripts
 
 if len(sys.argv) < 2:
     sys.stderr.write("Usage: %s infile.xml outfile.sb2\n" % sys.argv[0])
@@ -38,13 +38,25 @@ for child in snap_project_root:
         if child.text != None:
             scratch_project.notes = child.text
     if child.tag == "stage":
+        print "Converting Stage..."
+
         # raise error if Stage has inheritance
         if child.attrib['inheritance'] == "true":
             raise notsupported.InheritanceNotSupportedError()
+
+        stage_scripts = None
         # iterate over Stage element children
         for stage_child in child.iter():
             if stage_child.tag == "sprites":
                 snap_project_sprites = stage_child
+            if stage_child.tag == "scripts":
+                stage_scripts = stage_child
+
+        # convert stage scripts
+        print "> Converting scripts..."
+        if stage_scripts == None:
+            raise Exception("Stage scripts is None!")
+        scratch_project.stage.scripts = scripts.convert_scripts(stage_scripts)
 
 
 if snap_project_sprites == None:
@@ -56,4 +68,4 @@ for sprite in snap_project_sprites.iter("sprite"):
 
 scratch_project.save(sys.argv[2])
 
-print "Done!"
+print "\nDone!"
