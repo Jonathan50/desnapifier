@@ -1,0 +1,2 @@
+class InheritanceNotSupportedError(Exception):
+    pass
