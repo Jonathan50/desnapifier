@@ -18,9 +18,11 @@
 blocks = {
     # motion
     "forward":    [ "forward:", 1 ],
+
     # looks
     "doSayFor":   [ "say:duration:elapsed:from:", 2 ],
     "doThinkFor": [ "think:duration:elapsed:from:", 2 ],
+
     # control/events
     "receiveGo":  [ "whenGreenFlag", 0 ],
     "doWait":     [ "wait:elapsed:from:", 1 ]

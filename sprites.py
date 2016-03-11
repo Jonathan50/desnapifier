@@ -25,7 +25,7 @@ def convert_sprite(sprite, scratch_project):
 
     print "> Converting scripts..."
     snap_scripts = None
-    for child in sprite.iter("scripts"):
+    for child in sprite:
         if child.tag == "scripts":
             snap_scripts = child
     if snap_scripts == None:

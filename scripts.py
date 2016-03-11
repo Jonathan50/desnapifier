@@ -45,6 +45,7 @@ def convert_block(snap_block):
 
     s = snap_block.attrib["s"]
 
+    # iterate over all possible blocks
     for key in blocks.blocks:
         if key == s:
             args = get_args(snap_block)
