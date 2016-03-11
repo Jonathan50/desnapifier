@@ -22,6 +22,6 @@ def convert_scripts(snap_scripts):
     for script in snap_scripts.iter("script"):
         scratch_script = kurt.Script()
         for block in script.iter("block"):
-            # complex logic goes here...
+            # insert complex logic here...
             pass
     return scratch_scripts
