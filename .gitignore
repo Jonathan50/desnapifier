@@ -1,7 +1,7 @@
 *.pyc
 __pycache__
 test.sb2
-test_projectnotes.xml
+test_*.sb2
 .cache
 dist
 MANIFEST

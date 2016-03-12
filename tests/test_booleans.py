@@ -19,5 +19,5 @@ import os
 from desnapifier import project
 
 def test_reporters():
-    project.convert_project("tests/test_reporters.xml", "test_reporters.sb2")
-    os.remove("test_reporters.sb2")
+    project.convert_project("tests/test_booleans.xml", "test_booleans.sb2")
+    os.remove("test_booleans.sb2")
