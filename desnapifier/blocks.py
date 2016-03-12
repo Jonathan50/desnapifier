@@ -24,7 +24,7 @@ blocks = {
     "turnLeft":           [ "turnLeft:",  1, None ],
     "setHeading":         [ "heading:", 1, None ],
     "doFaceTowards":      [ "pointTowards:", 1, None ],
-    "gotoXY":             [ "gotoX:y:", 1, None ],
+    "gotoXY":             [ "gotoX:y:", 2, None ],
     "doGotoObject":       [ "gotoSpriteOrMouse:", 1, None ],
     "doGlide":            [ "glideSecs:toX:y:elapsed:from:", 4, None ],
     "changeXPosition":    [ "changeXposBy:", 1, None ],
