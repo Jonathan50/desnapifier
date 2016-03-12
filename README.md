@@ -1,14 +1,20 @@
 # desnapifier
 Convert [Snap*!*](http://snap.berkeley.edu) projects to [Scratch](http://scratch.mit.edu) by MIT.
-## Dependencies
-desnapifier depends on [Kurt](http://github.com/tjvr/kurt) by blob8108.
+## Installation
+desnapifier depends on [Kurt](http://github.com/tjvr/kurt) by blob8108.  
+Install desnapifier with
+```
+python2 setup.py install
+```
+\(as root on Unix-like systems\)
+I may upload it to PyPi.
 ## Usage
 ```
-python2 desnapifier.py infile.xml outfile.sb2
+python2 -m desnapifier infile.xml outfile.sb2
 ```
 For example:
 ```
-python2 desnapifier.py test.xml test.sb2
+python2 -m desnapifier test.xml test.sb2
 ```
 This will convert the Snap*!* project `test.xml` and output it to `test.sb2`
 ## Adding blocks
