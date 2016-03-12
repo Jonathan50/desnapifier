@@ -18,8 +18,8 @@
 import sys
 import project
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        sys.stderr.write("Usage: python -m desnapifier infile.xml outfile.sb2\n")
-        sys.exit()
-    project.convert_project(sys.argv[1], sys.argv[2])
+if len(sys.argv) < 3:
+    sys.stderr.write("Usage: python -m desnapifier infile.xml outfile.sb2\n")
+    sys.exit()
+
+project.convert_project(sys.argv[1], sys.argv[2])
