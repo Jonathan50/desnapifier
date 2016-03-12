@@ -9,5 +9,5 @@
  - [x] Allow blocks with no direct Scratch equivilant
 
 ## Sprites
- - [ ] Copy draggable value
- - [ ] Copy X and Y position
+ - [x] Copy draggable value
+ - [x] Copy X and Y position

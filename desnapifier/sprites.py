@@ -32,4 +32,10 @@ def convert_sprite(sprite, scratch_project):
         raise Exception("scripts is None!")
     scratch_sprite.scripts = scripts.convert_scripts(snap_scripts)
 
+    if "draggable" in sprite.attrib:
+        if sprite.attrib["draggable"] == "true":
+            scratch_sprite.is_draggable = True
+
+    scratch_sprite.position = (int(sprite.attrib["x"]), int(sprite.attrib["y"]))
+
     scratch_project.sprites.append(scratch_sprite)
