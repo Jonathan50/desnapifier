@@ -1,8 +1,8 @@
 # TODO
 ## Blocks
  - [ ] Support all compatible blocks
- - [ ] Support reporters
- - [ ] Support booleans
+ - [x] Support reporters
+ - [x] Support booleans
  - [ ] Copy costumes
  - [ ] Support temporary variables
  - [ ] Support custom blocks
