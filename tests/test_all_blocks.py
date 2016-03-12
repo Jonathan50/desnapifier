@@ -15,14 +15,17 @@
 # You should have received a copy of the GNU General Public License
 # along with desnapifier.  If not, see <http://www.gnu.org/licenses/>.
 
-from distutils.core import setup
+import os, kurt
+from desnapifier import scripts, blocks
 
-setup(
-    name = "desnapifier",
-    version = "0.5.1",
-    description = "Convert Snap! projects to Scratch",
-    author = "Jeandre Kruger",
-    author_email = "Unknown",
-    url = "https://github.com/Jonathan50/desnapifier",
-    packages = [ "desnapifier" ]
-)
+def test_all_blocks():
+    scratch_block = None
+    for key in blocks.blocks:
+        if blocks.blocks[key][0] != None:
+            args = [ "foo" ] * blocks.blocks[key][1]
+            scripts.check_args(blocks.blocks[key][0], blocks.blocks[key][1], len(args))
+            scratch_block = kurt.Block(blocks.blocks[key][0], *args)
+        else:
+            if blocks.blocks[key][2] == None:
+                raise Exception("Both block[0] and block[2] are none!")
+            scratch_block = blocks.blocks[key][2]()

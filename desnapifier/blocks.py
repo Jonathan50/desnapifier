@@ -22,6 +22,10 @@ blocks = {
     "forward":           [ "forward:", 1, None ],
     "turn":              [ "turnRight:", 1, None ],
     "turnLeft":          [ "turnLeft:",  1, None ],
+    "setHeading":        [ "heading:", 1, None ],
+    "doFaceTowards":     [ "pointTowards:", 1, None ],
+    "gotoXY":            [ "gotoX:y:", 1, None ],
+    "doGotoObject":      [ "gotoSpriteOrMouse:", 1, None ],
 
     # looks
     "doSayFor":          [ "say:duration:elapsed:from:", 2, None ],
