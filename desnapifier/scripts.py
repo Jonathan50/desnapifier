@@ -46,7 +46,7 @@ def get_args(snap_block):
     return args_list
 
 def convert_block(snap_block):
-    scratch_block = None
+    scratch_blocks = None
 
     if not "s" in snap_block.attrib:
         raise Exception("block has no s attribute!")
@@ -59,17 +59,17 @@ def convert_block(snap_block):
             if blocks.blocks[key][0] != None:
                 args = get_args(snap_block)
                 check_args(s, blocks.blocks[key][1], len(args))
-                scratch_block = kurt.Block(blocks.blocks[key][0], *args)
+                scratch_blocks = [ kurt.Block(blocks.blocks[key][0], *args) ]
             else:
                 if blocks.blocks[key][2] == None:
                     raise Exception("Both block[0] and block[2] are none!")
-                scratch_block = blocks.blocks[key][2]()
+                scratch_blocks = blocks.blocks[key][2](snap_block)
 
     # unknown block
-    if scratch_block == None:
+    if scratch_blocks == None:
         raise notsupported.UnsupportedBlockError(s)
 
-    return scratch_block
+    return scratch_blocks
 
 def convert_scripts(snap_scripts):
     scratch_scripts = []
@@ -79,7 +79,7 @@ def convert_scripts(snap_scripts):
             scratch_script = kurt.Script()
             for block in script:
                if block.tag == "block":
-                  scratch_script.append(convert_block(block))
+                  scratch_script.blocks += convert_block(block)
             scratch_scripts.append(scratch_script)
 
     return scratch_scripts

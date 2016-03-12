@@ -16,6 +16,15 @@
 # along with desnapifier.  If not, see <http://www.gnu.org/licenses/>.
 
 import kurt
+import scripts
+
+def report_block(snap_block):
+    script = []
+    args = scripts.get_args(snap_block)
+    scripts.check_args("doReport", 1, len(args))
+    script.append(kurt.Block("insert:at:ofList:", args[0], 1, "return stack"))
+    script.append(kurt.Block("stopScripts", "this script"))
+    return script
 
 blocks = {
     # motion
@@ -80,6 +89,7 @@ blocks = {
     "doIf":               [ "doIf", 2, None ],
     "doIfElse":           [ "doIfElse", 3, None ],
     "doWaitUntil":        [ "doWaitUntil", 1, None ],
+    "doReport":           [ None, 1, report_block ],
 
     # operators
     "reportSum":          [ "+", 2, None ],
@@ -89,6 +99,6 @@ blocks = {
     "reportLessThan":     [ "<", 2, None ],
     "reportEquals":       [ "=", 2, None ],
     "reportGreaterThan":  [ ">", 2, None ],
-    "reportTrue":         [ None, 0, lambda: kurt.Block("=", 1, 1) ],
-    "reportFalse":        [ None, 0, lambda: kurt.Block("=", 1, 0) ]
+    "reportTrue":         [ None, 0, lambda b: [ kurt.Block("=", 1, 1) ] ],
+    "reportFalse":        [ None, 0, lambda b: [ kurt.Block("=", 1, 0) ] ]
 }

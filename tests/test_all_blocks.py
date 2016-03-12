@@ -19,13 +19,9 @@ import os, kurt
 from desnapifier import scripts, blocks
 
 def test_all_blocks():
-    scratch_block = None
+    scratch_blocks = None
     for key in blocks.blocks:
         if blocks.blocks[key][0] != None:
             args = [ "foo" ] * blocks.blocks[key][1]
             scripts.check_args(blocks.blocks[key][0], blocks.blocks[key][1], len(args))
-            scratch_block = kurt.Block(blocks.blocks[key][0], *args)
-        else:
-            if blocks.blocks[key][2] == None:
-                raise Exception("Both block[0] and block[2] are none!")
-            scratch_block = blocks.blocks[key][2]()
+            scratch_blocks = [ kurt.Block(blocks.blocks[key][0], *args) ]

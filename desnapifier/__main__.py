@@ -19,7 +19,7 @@ import sys, pkg_resources
 import project
 
 if "--version" in sys.argv or "-v" in sys.argv:
-    print "desnapifier version 0.6.1"
+    print "desnapifier version 0.6.2"
     print
     print "desnapifier is free software: you can redistribute it and/or modify"
     print "it under the terms of the GNU General Public License as published by"
