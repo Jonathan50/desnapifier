@@ -15,6 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with desnapifier.  If not, see <http://www.gnu.org/licenses/>.
 
+import kurt
+
 blocks = {
     # motion
     "forward":           [ "forward:", 1, None ],
@@ -40,5 +42,7 @@ blocks = {
     "reportQuotient":    [ "/", 2, None ],
     "reportLessThan":    [ "<", 2, None ],
     "reportEquals":      [ "=", 2, None ],
-    "reportGreaterThan": [ ">", 2, None ]
+    "reportGreaterThan": [ ">", 2, None ],
+    "reportTrue":        [ None, 0, lambda: kurt.Block("=", 1, 1) ],
+    "reportFalse":       [ None, 0, lambda: kurt.Block("=", 1, 0) ]
 }
