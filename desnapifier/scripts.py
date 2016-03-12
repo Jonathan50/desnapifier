@@ -35,7 +35,9 @@ def get_args(snap_block):
     for child in snap_block:
         if child.tag == "l":
             args_list.append(child.text)
-    return tuple(args_list)
+        if child.tag == "block":
+            args_list.append(convert_block(child))
+    return args_list
 
 def convert_block(snap_block):
     scratch_block = None
