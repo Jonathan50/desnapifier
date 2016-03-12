@@ -1,6 +1,6 @@
 # TODO
 ## Blocks
- - [ ] Support all compatible blocks
+ - [x] Support all compatible blocks \(except list blocks\)
  - [x] Support reporters
  - [x] Support booleans
  - [ ] Support temporary variables

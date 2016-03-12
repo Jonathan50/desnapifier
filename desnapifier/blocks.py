@@ -127,9 +127,23 @@ blocks = {
     "reportDifference":           [ "-", 2, None ],
     "reportProduct":              [ "*", 2, None ],
     "reportQuotient":             [ "/", 2, None ],
+    "reportRandom":               [ "randomFrom:to:", 2, None ],
     "reportLessThan":             [ "<", 2, None ],
     "reportEquals":               [ "=", 2, None ],
     "reportGreaterThan":          [ ">", 2, None ],
+    "reportAnd":                  [ "&", 2, None ],
+    "reportOr":                   [ "|", 2, None ],
+    "reportNot":                  [ "not", 2, None ],
+    "reportJoinWords":            [ "concatenate:with:", 2, None ],
+    "reportLetter":               [ "letter:of:", 2, None ],
+    "reportStringSize":           [ "stringLength:", 1, None ],
+    "reportMonadic":              [ "computeFunction:of:", 2, None ],
     "reportTrue":                 [ None, 0, lambda b: [ kurt.Block("=", 1, 1) ] ],
-    "reportFalse":                [ None, 0, lambda b: [ kurt.Block("=", 1, 0) ] ]
+    "reportFalse":                [ None, 0, lambda b: [ kurt.Block("=", 1, 0) ] ],
+
+    # variables
+    "doSetVar":                   [ "setVar:to:", 2, None ],
+    "doChangeVar":                [ "changeVar:by:", 2, None ],
+    "doShowVar":                  [ "showVariable:", 1, None ],
+    "doHideVar":                  [ "hideVariable:", 1, None ]
 }
