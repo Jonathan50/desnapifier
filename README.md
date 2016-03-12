@@ -15,16 +15,17 @@ This will convert the Snap*!* project `test.xml` and output it to `test.sb2`
 To add a block, simply add a new entry in `blocks.py`.  
 An entry looks like the following:
 ```py
-    "snapIdentifier": [ "scratchOpcode", argCount, makeBlockFn ],
+    "snapSelector": [ "scratchOpcode", argCount, makeBlockFn ],
 ```
-`snapIdentifier` is the identifier Snap*!* uses to identify the block.  
+`snapSelector` is the identifier Snap*!* uses to identify the block.  
 `scratchOpcode` is the opcode of the Scratch block, or None if there is no Scratch equivilant.  
 `makeBlockFn` is a function that should return a `kurt.Block`, or `None`. Use this only if there is no direct Scratch equivilant to the block.
 For example:
 ```py
     "doSayFor":   [ "say:duration:elapsed:from:", 2, None ],
 ```
-Find a full list of Scratch block opcodes at https://github.com/LLK/scratch-flash/blob/master/src/Specs.as.
+Find a full list of Scratch block opcodes at https://github.com/LLK/scratch-flash/blob/master/src/Specs.as.  
+Find a full list of Snap*!* selectors at https://github.com/jmoenig/Snap--Build-Your-Own-Blocks/blob/master/objects.js#L160.
 ## Status
 desnapifier is currently only able to convert very simple Snap*!* projects.  
 See `test.xml` for an example.  
