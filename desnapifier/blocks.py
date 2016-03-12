@@ -26,6 +26,15 @@ blocks = {
     "doFaceTowards":     [ "pointTowards:", 1, None ],
     "gotoXY":            [ "gotoX:y:", 1, None ],
     "doGotoObject":      [ "gotoSpriteOrMouse:", 1, None ],
+    "doGlide":           [ "glideSecs:toX:y:elapsed:from:", 4, None ],
+    "changeXPosition":   [ "changeXposBy:", 1, None ],
+    "setXPosition":      [ "xpos:", 1, None ],
+    "changeYPosition":   [ "changeYposBy:", 1, None ],
+    "setYPosition":      [ "ypos:", 1, None ],
+    "bounceOffEdge":     [ "bounceOffEdge", 0, None ],
+    "xPosition":         [ "xpos", 0, None ],
+    "yPosition":         [ "ypos", 0, None ],
+    "direction":         [ "heading", 0, None ],
 
     # looks
     "doSayFor":          [ "say:duration:elapsed:from:", 2, None ],
@@ -34,6 +43,17 @@ blocks = {
     "doThink":           [ "think:", 1, None ],
     "show":              [ "show", 0, None ],
     "hide":              [ "hide", 0, None ],
+    "doSwitchToCostume": [ "lookLike:", 1, None ],
+    "doWearNextCostume": [ "nextCostume", 0, None ],
+    "changeEffect":      [ "changeGraphicEffect:by:", 2, None ],
+    "setEffect":         [ "setGraphicEffect:to:", 2, None ],
+    "clearEffects":      [ "filterReset", 0, None ],
+    "changeScale":       [ "changeSizeBy:", 1, None ],
+    "setScale":          [ "setSizeTo:", 1, None ],
+    "comeToFront":       [ "comeToFront", 0, None ],
+    "goBack":            [ "goBackByLayers:", 1, None ],
+    "getCostumeIdx":     [ "costumeIndex", 0, None ],
+    "scale":             [ "getScale", 0, None ],
 
     # control/events
     "receiveGo":         [ "whenGreenFlag", 0, None ],
