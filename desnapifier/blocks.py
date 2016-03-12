@@ -53,7 +53,7 @@ blocks = {
     "comeToFront":       [ "comeToFront", 0, None ],
     "goBack":            [ "goBackByLayers:", 1, None ],
     "getCostumeIdx":     [ "costumeIndex", 0, None ],
-    "scale":             [ "getScale", 0, None ],
+    "getScale":             [ "scale", 0, None ],
 
     # control/events
     "receiveGo":         [ "whenGreenFlag", 0, None ],
