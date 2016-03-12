@@ -45,11 +45,17 @@ def get_args(snap_block):
             args_list.append(c_block_script)
     return args_list
 
+def get_variable(name):
+    return kurt.Block("readVariable", name)
+
 def convert_block(snap_block):
     scratch_blocks = None
 
     if not "s" in snap_block.attrib:
-        raise Exception("block has no s attribute!")
+        if not "var" in snap_block.attrib:
+            raise Exception("block has no s or var attribute!")
+        scratch_blocks = [ get_variable(snap_block.attrib["var"]) ]
+        return scratch_blocks
 
     s = snap_block.attrib["s"]
 

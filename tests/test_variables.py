@@ -15,14 +15,9 @@
 # You should have received a copy of the GNU General Public License
 # along with desnapifier.  If not, see <http://www.gnu.org/licenses/>.
 
-from distutils.core import setup
+import os
+from desnapifier import project
 
-setup(
-    name = "desnapifier",
-    version = "0.6.6",
-    description = "Convert Snap! projects to Scratch",
-    author = "Jeandre Kruger",
-    author_email = "Unknown",
-    url = "https://github.com/Jonathan50/desnapifier",
-    packages = [ "desnapifier" ]
-)
+def test_variables():
+    project.convert_project("tests/test_variables.xml", "test_variables.sb2")
+    os.remove("test_variables.sb2")
