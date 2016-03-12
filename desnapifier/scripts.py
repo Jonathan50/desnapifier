@@ -37,6 +37,12 @@ def get_args(snap_block):
             args_list.append(child.text)
         if child.tag == "block":
             args_list.append(convert_block(child))
+        if child.tag == "script":
+            c_block_script = []
+            for block in child:
+                if block.tag == "block":
+                    c_block_script.append(convert_block(block))
+            args_list.append(c_block_script)
     return args_list
 
 def convert_block(snap_block):
@@ -68,11 +74,12 @@ def convert_block(snap_block):
 def convert_scripts(snap_scripts):
     scratch_scripts = []
 
-    for script in snap_scripts.iter("script"):
-        scratch_script = kurt.Script()
-        for block in script:
-            if block.tag == "block":
-                scratch_script.append(convert_block(block))
-        scratch_scripts.append(scratch_script)
+    for script in snap_scripts:
+        if script.tag == "script":
+            scratch_script = kurt.Script()
+            for block in script:
+               if block.tag == "block":
+                  scratch_script.append(convert_block(block))
+            scratch_scripts.append(scratch_script)
 
     return scratch_scripts

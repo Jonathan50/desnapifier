@@ -34,6 +34,8 @@ blocks = {
     # control/events
     "receiveGo":         [ "whenGreenFlag", 0, None ],
     "doWait":            [ "wait:elapsed:from:", 1, None ],
+    "doIf":              [ "doIf", 2, None ],
+    "doIfElse":          [ "doIfElse", 3, None ],
 
     # operators
     "reportSum":         [ "+", 2, None ],
