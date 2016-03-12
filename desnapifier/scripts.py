@@ -41,7 +41,7 @@ def get_args(snap_block):
             c_block_script = []
             for block in child:
                 if block.tag == "block":
-                    c_block_script.append(convert_block(block))
+                    c_block_script += convert_block(block)
             args_list.append(c_block_script)
     return args_list
 
