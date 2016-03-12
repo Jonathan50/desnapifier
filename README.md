@@ -4,10 +4,9 @@ Convert [Snap*!*](http://snap.berkeley.edu) projects to [Scratch](http://scratch
 desnapifier depends on [Kurt](http://github.com/tjvr/kurt) by blob8108.  
 Install desnapifier with
 ```
-python2 setup.py install
+pip2 install desnapifier
 ```
-\(as root on Unix-like systems\)
-I may upload it to PyPi.
+\(as root on Unix-like systems\), or, download and run `python2 setup.py install`.
 ## Usage
 ```
 python2 -m desnapifier infile.xml outfile.sb2
