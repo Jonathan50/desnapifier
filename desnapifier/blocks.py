@@ -99,6 +99,11 @@ blocks = {
     "doIf":               [ "doIf", 2, None ],
     "doIfElse":           [ "doIfElse", 3, None ],
     "doWaitUntil":        [ "doWaitUntil", 1, None ],
+    "doUntil":            [ "doUntil", 2, None ],
+    "doStop":             [ "stopScripts", 1, None ],
+    "receiveOnClone":     [ "whenCloned", 0, None ],
+    "createClone":        [ "createCloneOf:", 1, None ],
+    "removeClone":        [ "deleteClone", 0, None ],
     "doReport":           [ None, 1, report_block ],
 
     # operators
